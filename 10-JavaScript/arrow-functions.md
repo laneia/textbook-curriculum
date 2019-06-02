@@ -44,7 +44,7 @@ So what have we done?  We've gotten rid of the `function` keyword and placed an 
 
 Because our function has only a **one** line return, we can remove the return keyword and the curly braces around the function body.
 
-Since `'bar'` is the only line in the function, it's considered an _implicit return_.  In other words, JavaScript assumes the function will return that value.  Taking out the curly braces and return statement makes them implicit and reduces the amount of code we need to write.
+Since `'bar'` is the only line in the function, it's considered an _implicit return_.  In other words, JavaScript assumes the function will return that value.  Taking out the curly braces and return statement makes them implicit and reduces the amount of code we need to write.  It's important to note that the implicit return only occurs when the method body contains a single expression and without the curly braces `{ }`.
 
 ```javascript
 const foo = () => 'bar';
@@ -54,6 +54,13 @@ console.log(foo());
 ```
 
 Wow that's a lot less code.
+
+It could also work with:
+
+```javascript
+const foo = () => 
+  'bar';
+```
 
 ### Exercise
 
@@ -142,3 +149,7 @@ const makePerson = (id, name) => ({ id, name });
 ## Summary
 
 To convert a traditional-style syntax to an arrow function, we rid of the `function` keyword and placed a 'arrow' to the right of the function parameters.
+
+## Resources
+
+- [Javascript Arrow Funciton Return Rules](https://jaketrent.com/post/javascript-arrow-function-return-rules/)
